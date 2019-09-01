@@ -15,6 +15,7 @@ recognition.onresult = function(event) {
 
     const transcript = event.results[current][0].transcript;
     content.textContent = transcript;
+    readOutLoud(transcript);
 
 };
 
@@ -29,4 +30,5 @@ function readOutLoud(message){
     speech.rate = 1;
     speech.pitch = 1;
 
+    window.speechSynthesis.speak(speech);
 }
